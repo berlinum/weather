@@ -11,7 +11,6 @@ const GlobalStyles = () => {
         }
 
         body {
-          box-sizing: border-box;
           display: flex;
           flex-direction: column;
           flex-wrap: nowrap;

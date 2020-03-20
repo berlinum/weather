@@ -8,6 +8,7 @@ const Form = styled.form`
   justify-content: space-between;
   width: 100%;
   height: 110px;
+  font-family: SF;
 `;
 
 const Input = styled.input`
@@ -16,6 +17,7 @@ const Input = styled.input`
   padding: 0 10px;
   border: none;
   border-radius: 10px;
+  font-family: SF;
 `;
 
 const Button = styled.button`
@@ -25,6 +27,7 @@ const Button = styled.button`
   border-radius: 50%;
   background: coral;
   font-size: 20px;
+  font-family: SF;
 `;
 
 function InputForm() {
