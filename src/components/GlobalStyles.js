@@ -18,7 +18,7 @@ const GlobalStyles = () => {
           background-color: whitesmoke;
           height: 100vh;
           color: #707070;
-          font-family: SF !important;
+          font-family: SF;
         }
       `}
     />
