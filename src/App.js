@@ -14,9 +14,10 @@ const Main = styled.main`
 
 function App() {
   const [position, setPosition] = React.useState([]);
+  const [weather, setWeather] = React.useState([]);
 
   React.useEffect(() => {
-    // Get location
+    // Get location from browser
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         const currentPosition = {
@@ -26,9 +27,18 @@ function App() {
         setPosition(currentPosition);
       });
     }
-  }, []);
+    // Get weather by current position
+    async function getWeather() {
+      const response = await fetch(
+        `http://api.weatherstack.com/current?access_key=4cb6d24c77dc1d193c4815ae652e0186&query=${position.latitude},${position.longitude}`
+      );
+      const weather = await response.json();
+      setWeather(weather);
+    }
+    getWeather();
+  }, [position.latitude, position.longitude]);
 
-  console.log(position);
+  console.log(weather);
 
   return (
     <>
