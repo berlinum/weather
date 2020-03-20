@@ -13,6 +13,23 @@ const Main = styled.main`
 `;
 
 function App() {
+  const [position, setPosition] = React.useState([]);
+
+  React.useEffect(() => {
+    // Get location
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        const currentPosition = {
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude
+        };
+        setPosition(currentPosition);
+      });
+    }
+  }, []);
+
+  console.log(position);
+
   return (
     <>
       <GlobalStyles />

@@ -13,6 +13,7 @@ const Form = styled.form`
 const Input = styled.input`
   width: 60%;
   height: 30px;
+  padding: 0 10px;
   border: none;
   border-radius: 10px;
 `;
@@ -29,7 +30,7 @@ const Button = styled.button`
 function InputForm() {
   return (
     <Form>
-      <Input></Input>
+      <Input placeholder="Enter your city"></Input>
       <Button>Go</Button>
     </Form>
   );

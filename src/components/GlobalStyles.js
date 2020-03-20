@@ -11,6 +11,7 @@ const GlobalStyles = () => {
         }
 
         body {
+          box-sizing: border-box;
           display: flex;
           flex-direction: column;
           flex-wrap: nowrap;
@@ -18,7 +19,7 @@ const GlobalStyles = () => {
           background-color: whitesmoke;
           height: 100vh;
           color: #707070;
-          font-family: SF !important;
+          font-family: SF;
         }
       `}
     />
