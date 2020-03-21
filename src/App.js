@@ -13,16 +13,24 @@ const Main = styled.main`
 `;
 
 function App() {
+  const [inputCity, setInputCity] = React.useState("");
+
+  function handleSubmit(newCity) {
+    setInputCity(newCity);
+  }
+
   return (
     <>
       <GlobalStyles />
       <AppHeader />
       <Main>
-        <InputForm />
-        <WeatherInfo />
+        <InputForm onSubmit={handleSubmit} />
+        <WeatherInfo newInput={inputCity} />
       </Main>
     </>
   );
 }
 
 export default App;
+
+// onChange={event => setInputCity(event.target.value)}

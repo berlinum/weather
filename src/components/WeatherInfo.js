@@ -15,7 +15,7 @@ const Container = styled.div`
   border-radius: 20px;
 `;
 
-function WeatherInfo() {
+function WeatherInfo(props) {
   const [position, setPosition] = React.useState([]);
   const [weather, setWeather] = React.useState([]);
 
@@ -40,6 +40,18 @@ function WeatherInfo() {
     }
     getWeather();
   }, [position.latitude, position.longitude]);
+
+  React.useEffect(() => {
+    // Get weather by input
+    async function getWeather() {
+      const response = await fetch(
+        `http://api.weatherstack.com/current?access_key=4cb6d24c77dc1d193c4815ae652e0186&query=${props.newInput}`
+      );
+      const weather = await response.json();
+      setWeather(weather);
+    }
+    getWeather();
+  }, [props.newInput]);
 
   return (
     <Container>

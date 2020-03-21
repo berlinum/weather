@@ -30,10 +30,22 @@ const Button = styled.button`
   font-family: SF;
 `;
 
-function InputForm() {
+function InputForm(props) {
+  const [newCity, setNewCity] = React.useState("");
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    props.onSubmit(newCity);
+  }
+
   return (
-    <Form>
-      <Input placeholder="Enter your city"></Input>
+    <Form onSubmit={handleSubmit}>
+      <Input
+        placeholder="Enter your city"
+        onChange={event => {
+          setNewCity(event.target.value);
+        }}
+      ></Input>
       <Button>Go</Button>
     </Form>
   );
