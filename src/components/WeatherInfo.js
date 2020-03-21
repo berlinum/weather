@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Location from "./Location";
-import Temp from "./Temp";
+import CurrentWeather from "./CurrentWeather";
 
 const Container = styled.div`
   box-sizing: border-box;
@@ -47,7 +47,10 @@ function WeatherInfo() {
         city={weather.location?.name}
         country={weather.location?.country}
       />
-      <Temp temp={weather.current?.temperature + "°"} />
+      <CurrentWeather
+        temp={weather.current?.temperature}
+        description={weather.current?.weather_descriptions}
+      />
     </Container>
   );
 }
