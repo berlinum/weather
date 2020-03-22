@@ -18,16 +18,18 @@ const Input = styled.input`
   border: none;
   border-radius: 10px;
   font-family: SF;
+  color: #707070;
 `;
 
 const Button = styled.button`
-  width: 50px;
+  width: 100px;
   height: 50px;
   border: none;
-  border-radius: 50%;
-  background: coral;
-  font-size: 20px;
+  border-radius: 15px;
+  background: lightsalmon;
+  font-size: 27px;
   font-family: SF;
+  color: #707070;
 `;
 
 function InputForm(props) {
@@ -46,7 +48,7 @@ function InputForm(props) {
           setNewCity(event.target.value);
         }}
       ></Input>
-      <Button>Go</Button>
+      <Button>Go!</Button>
     </Form>
   );
 }
