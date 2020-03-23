@@ -19,6 +19,11 @@ const Input = styled.input`
   border-radius: 10px;
   font-family: SF;
   color: #707070;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 3px 2px #007aff;
+  }
 `;
 
 const Button = styled.button`
@@ -26,10 +31,20 @@ const Button = styled.button`
   height: 50px;
   border: none;
   border-radius: 15px;
-  background: lightsalmon;
+  background: #60bfae;
   font-size: 27px;
   font-family: SF;
-  color: #707070;
+  color: #598078;
+  cursor: pointer;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 3px 2px #007aff;
+  }
+  &:hover {
+    color: #fff;
+    background-color: #cfe6e1;
+  }
 `;
 
 function InputForm(props) {

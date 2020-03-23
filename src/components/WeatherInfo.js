@@ -14,6 +14,7 @@ const Container = styled.div`
   background: lightsalmon;
   margin-top: 30px;
   border-radius: 20px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
 `;
 
 const ContainerLoading = styled(Container)`
